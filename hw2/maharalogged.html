@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+  <button value="new win" type="button" onclick="countframes()">Logged</button>
+  <h1 id="result"></h1>
+</body>
+
+
+</html>
+<script>
+  function countframes() {
+    let win = window.open("https://mahara.ut.ee/artefact/internal/index.php")
+    setTimeout(() => {
+      var frames = win.length
+      win.close()
+      var elem = document.getElementById("result")
+      if (frames === 1) {
+        elem.innerHTML = 'you are logged in'
+      } else {
+        elem.innerHTML = 'you are logged out'
+      }
+    }, 1000)
+
+  }
+</script>

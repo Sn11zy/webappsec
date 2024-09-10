@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <iframe id="frame" hidden></iframe>
+
+  <p id="time"></p>
+  <button onclick="loadIframe()">button</button>
+
+  <script>
+    function loadIframe() {
+      document.getElementById("frame").src = "/time.php";
+      setTimeout(() => document.getElementById("time").innerHTML = document.getElementById("frame").contentDocument.body.innerHTML, 300);
+
+    }
+  </script>
+
+</body>
+
+</html>
